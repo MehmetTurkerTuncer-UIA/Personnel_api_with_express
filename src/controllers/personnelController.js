@@ -111,11 +111,11 @@ module.exports = {
       throw new Error("Please entry username and password.");
     }
   },
-  logout: async () => {
+  logout: async (req, res) => {
     req.session = null
-    res.send({
+    res.status(200).send({
       error: false,
-      maessage:"Logout is completed"
+      message:"Logout is completed"
     })
   }
 };

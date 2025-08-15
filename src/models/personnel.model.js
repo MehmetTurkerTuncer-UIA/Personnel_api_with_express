@@ -2,6 +2,7 @@
 /* -------------------------------------------------------
     EXPRESS - Personnel API
 ------------------------------------------------------- */
+
 const { mongoose } = require("../configs/dbConnection");
 /* ------------------------------------------------------- */
 const passwordEncrypt = require("../helpers/passwordEncrypt");
