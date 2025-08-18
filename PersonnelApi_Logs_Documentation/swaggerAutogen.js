@@ -70,7 +70,7 @@ const document = {
         contact: {
             name: packageJson.author.name || 'Personnel API Support',
             url: packageJson.author.url || 'https://example.com/support',
-            email: packageJson.author.email || '    
+            email: packageJson.author.email || 'mehmet@gmail.com '    
         },
         licence: {
             name: packageJson.license || 'MIT',
