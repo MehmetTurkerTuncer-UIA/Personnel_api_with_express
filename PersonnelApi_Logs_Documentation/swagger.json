@@ -36,19 +36,45 @@
   "paths": {
     "/auth/login": {
       "post": {
-        "description": "",
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "Login to the system.",
+        "description": "This endpoint allows users to log in by providing their username and password.",
         "parameters": [
           {
             "name": "body",
             "in": "body",
+            "description": "User credentials for login.",
+            "required": true,
             "schema": {
               "type": "object",
               "properties": {
                 "username": {
-                  "example": "any"
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "example": {
+                      "type": "string",
+                      "example": "john_doe"
+                    }
+                  }
                 },
                 "password": {
-                  "example": "any"
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "example": {
+                      "type": "string",
+                      "example": "password123"
+                    }
+                  }
                 }
               }
             }
@@ -63,7 +89,11 @@
     },
     "/auth/logout": {
       "get": {
-        "description": "",
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "Logout from the system.",
+        "description": "Delete token and logout user.",
         "responses": {
           "200": {
             "description": "OK"
@@ -612,7 +642,7 @@
             },
             "default": {
               "type": "number",
-              "example": 1755536817709
+              "example": 1755537611633
             }
           }
         }
