@@ -103,7 +103,11 @@
     },
     "/departments/": {
       "get": {
-        "description": "",
+        "tags": [
+          "Departments"
+        ],
+        "summary": "List all departments.",
+        "description": "\r  You can send query with endpoint for search[], sort[], page and limit.\r  <ul> Examples:\r  <li>URL/?<b>filter[field1]=value1&filter[field2]=value2</b></li>\r  <li>URL/?<b>search[field1]=value1&search[field2]=value2</b></li>\r  <li>URL/?<b>sort[field1]=1&sort[field2]=-1</b></li>\r  <li>URL/?<b>page=2&limit=1</b></li>\r  </ul>\r  ",
         "responses": {
           "200": {
             "description": "OK"
@@ -111,7 +115,22 @@
         }
       },
       "post": {
+        "tags": [
+          "Departments"
+        ],
+        "summary": "Create a new department.",
         "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Department data to be created.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Department"
+            }
+          }
+        ],
         "responses": {
           "201": {
             "description": "Created"
@@ -121,6 +140,10 @@
     },
     "/departments/{id}": {
       "get": {
+        "tags": [
+          "Departments"
+        ],
+        "summary": "Get a department by ID.",
         "description": "",
         "parameters": [
           {
@@ -137,6 +160,10 @@
         }
       },
       "put": {
+        "tags": [
+          "Departments"
+        ],
+        "summary": "Update a department by ID.",
         "description": "",
         "parameters": [
           {
@@ -144,6 +171,15 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Department data to be updated.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Department"
+            }
           }
         ],
         "responses": {
@@ -153,6 +189,10 @@
         }
       },
       "delete": {
+        "tags": [
+          "Departments"
+        ],
+        "summary": "Create a new department.",
         "description": "",
         "parameters": [
           {
@@ -172,6 +212,10 @@
         }
       },
       "patch": {
+        "tags": [
+          "Departments"
+        ],
+        "summary": "Update a department by ID.",
         "description": "",
         "parameters": [
           {
@@ -179,6 +223,15 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Department data to be updated.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Department"
+            }
           }
         ],
         "responses": {
@@ -190,6 +243,10 @@
     },
     "/departments/{id}/personnels": {
       "get": {
+        "tags": [
+          "Departments"
+        ],
+        "summary": "List all personnels in a department.",
         "description": "",
         "parameters": [
           {
@@ -208,7 +265,11 @@
     },
     "/personnels/": {
       "get": {
-        "description": "",
+        "tags": [
+          "Personnels"
+        ],
+        "summary": "List Personnels",
+        "description": "\r  You can send query with endpoint for search[], sort[], page and limit.\r  <ul> Examples:\r  <li>URL/?<b>filter[field1]=value1&filter[field2]=value2</b></li>\r  <li>URL/?<b>search[field1]=value1&search[field2]=value2</b></li>\r  <li>URL/?<b>sort[field1]=1&sort[field2]=-1</b></li>\r  <li>URL/?<b>page=2&limit=1</b></li>\r  </ul>\r  ",
         "responses": {
           "200": {
             "description": "OK"
@@ -216,18 +277,18 @@
         }
       },
       "post": {
+        "tags": [
+          "Personnels"
+        ],
+        "summary": "Create Personnel",
         "description": "",
         "parameters": [
           {
             "name": "body",
             "in": "body",
+            "required": true,
             "schema": {
-              "type": "object",
-              "properties": {
-                "departmentId": {
-                  "example": "any"
-                }
-              }
+              "$ref": "#/definitions/Personnel"
             }
           }
         ],
@@ -240,6 +301,10 @@
     },
     "/personnels/{id}": {
       "get": {
+        "tags": [
+          "Personnels"
+        ],
+        "summary": "Get Single Personnel",
         "description": "",
         "parameters": [
           {
@@ -256,6 +321,10 @@
         }
       },
       "put": {
+        "tags": [
+          "Personnels"
+        ],
+        "summary": "Update Personnel",
         "description": "",
         "parameters": [
           {
@@ -263,6 +332,14 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Personnel"
+            }
           }
         ],
         "responses": {
@@ -272,6 +349,10 @@
         }
       },
       "delete": {
+        "tags": [
+          "Personnels"
+        ],
+        "summary": "Delete Personnel",
         "description": "",
         "parameters": [
           {
@@ -291,6 +372,10 @@
         }
       },
       "patch": {
+        "tags": [
+          "Personnels"
+        ],
+        "summary": "Update Personnel",
         "description": "",
         "parameters": [
           {
@@ -298,6 +383,14 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Personnel"
+            }
           }
         ],
         "responses": {
@@ -555,7 +648,7 @@
             },
             "default": {
               "type": "number",
-              "example": 1755538818061
+              "example": 1755540236003
             }
           }
         }
