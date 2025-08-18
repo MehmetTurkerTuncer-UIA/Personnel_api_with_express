@@ -53,6 +53,15 @@ app.use(
 //npm i swagger-jsdoc
 //npm i redoc-express
 
+// JSON
+app.use('/documents/json', (req, res) => {
+  res.sendFile('swagger.json', {root: '.'});
+})
+
+// SWAGGER UI
+const swaggerUi = require("swagger-ui-express");
+const swaggerJson = require("./swagger.json");
+app.use("/documents/swagger", swaggerUi.serve, swaggerUi.setup(swaggerJson, {persistAuthorization: true }));
 
 /* ------------------------------------------------------- */
 //Morgan Logger:
