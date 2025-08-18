@@ -64,6 +64,19 @@ const swaggerJson = require("./swagger.json");
 app.use("/documents/swagger", swaggerUi.serve, swaggerUi.setup(swaggerJson, {persistAuthorization: true }));
 
 /* ------------------------------------------------------- */
+
+const redoc = require("redoc-express");
+app.use(
+  "/documents/redoc",
+  redoc({
+    title: "Personnel API Documentation",
+    specUrl: "/documents/json",
+    hideDownloadButton: true,
+  }),
+);
+
+/* ------------------------------------------------------- */
+/* ------------------------------------------------------- */
 //Morgan Logger:
 app.use(require("./src/middlewares/logger"));
 // Authentication Middleware:

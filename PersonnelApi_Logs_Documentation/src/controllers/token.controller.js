@@ -14,6 +14,13 @@ module.exports = {
 
     list: async (req, res) => {
 
+        /*
+            _swagger.deprecated = true
+            #swagger.ignore = true
+        */
+//  swagger in basindaki kareyi alttan cizgi yaparsaniz bu swegger gecerli olmuyor
+        
+
         const data = await res.getModelList(Token);
 
         res.status(200).send({
@@ -25,6 +32,9 @@ module.exports = {
 
     create: async (req, res) => {
 
+        /*
+            #swagger.ignore = true
+        */
         const data = await Token.create(req.body);
 
         res.status(201).send({
@@ -35,6 +45,9 @@ module.exports = {
 
     read: async (req, res) => {
 
+        /*
+            #swagger.ignore = true
+        */
         const data = await Token.findOne({ _id: req.params.id });
 
         res.status(200).send({
@@ -44,6 +57,10 @@ module.exports = {
     },
 
     update: async (req, res) => {
+
+        /*
+            #swagger.ignore = true
+        */
 
         const data = await Token.updateOne({ _id: req.params.id }, req.body, { runValidators: true });
 
@@ -55,6 +72,10 @@ module.exports = {
     },
 
     delete: async (req, res) => {
+
+/*
+            #swagger.ignore = true
+        */
 
         const data = await Token.deleteOne({ _id: req.params.id });
         
