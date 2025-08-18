@@ -45,6 +45,14 @@ app.use(
 // LOGGER
 // https://expressjs.com/en/resources/middleware/morgan.html
 
+// DOKUMENTATION
+
+// hazir json olusturacak araclar
+//npm i swagger-autogen # JSON creator
+//npm i swagger-ui-express
+//npm i swagger-jsdoc
+//npm i redoc-express
+
 
 /* ------------------------------------------------------- */
 //Morgan Logger:
