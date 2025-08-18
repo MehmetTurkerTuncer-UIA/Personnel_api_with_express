@@ -14,6 +14,21 @@ module.exports = {
 
     login: async (req, res) => {
 
+        /*
+            #swagger.tags = ['Authentication']
+            #swagger.summary = 'Login to the system.'
+            #swagger.description = 'This endpoint allows users to log in by providing their username and password.' 
+            #swagger.parameters['body'] = {
+                in: 'body',
+                description: 'User credentials for login.',
+                required: true,
+                schema: {
+                    username: { type: 'string', example: 'john_doe' },
+                    password: { type: 'string', example: 'password123' }
+                    }
+            }            
+                    */
+
         const { username, password } = req.body
 
         if (username && password) {
